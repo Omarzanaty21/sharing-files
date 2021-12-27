@@ -1,0 +1,14 @@
+body{
+
+}
+.main-content{
+    padding-top:130px;
+    padding-bottom:20px;
+    font-family: cursive;
+    min-height: 500px;
+
+}
+
+.main-content h1, .main-content h2{
+    color:#0091ea;
+}

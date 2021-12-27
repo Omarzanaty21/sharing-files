@@ -1,0 +1,45 @@
+@model IEnumerable<FileSharing.Models.UploadViewModel>
+@{
+    ViewData["Title"] = "Results";
+}
+<h3>Search Results</h3>
+<hr />
+<div class="container">
+    <div class="row">
+        @foreach(var item in Model)
+        {
+        <div class="card mb-3 col-md-12">
+            <div class="row no-guitars">
+                <div class="col-md-4">
+                    @if(item.ContentType.ToLower().StartsWith("image"))
+                    {
+                    <img width="50%" height="50%" src="/Uploads/@item.FileName" class="img-fluid rounded-start" alt="...">
+                    }
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                            <h5 class="card-title">@item.OriginalFileName</h5>
+                            @*<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>*@
+                            <div style="text-align:right">Downloads : @item.DownloadCount</div>
+                            <p class="card-text" style="text-align:right">
+                                <small class="text-muted">@item.UploadDate</small><br />
+                                 @{
+                                    var size = item.Size / 1024;
+                                    if(size < 1024)
+                                    {
+                                        <span>Size: @Math.Floor(size) kb</span>
+                                    }
+                                    else
+                                    {
+                                        <span>Size: @(Math.Floor(size)/1024) Mb</span>
+                                    }
+                                }
+                                </p>
+                            <div class="text-right"><a class="btn btn-success" target="_blank" asp-action="Download" asp-controller="Upload" asp-route-id="@item.FileName">Download</a></div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,47 @@
+@model FileSharing.Data.Uploads
+@{
+    ViewData["title"] = "Delete";
+}
+
+<h2>Delete</h2>
+<h3>Do you want to delete this?</h3>
+<div>
+    <h4>Uploads</h4>
+    <hr />
+    <dl class="dl-horiaontal">
+        <dt>
+            Original File name
+        </dt>
+        <dd>
+            @Model.OriginalFileName
+        </dd>
+        <dt>
+            Content Type    
+        </dt>
+        <dd>
+            @Model.ContentType
+        </dd>
+        <dt>
+            Size
+        </dt>
+        <dd>
+            @Model.Size
+        </dd>
+        <dt>
+            User Id
+        </dt>
+        <dd>
+            @Model.UserId
+        </dd>
+        <dt>
+            Upload time
+        </dt>
+        <dd>
+            @Model.UploadTime
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <Input type="submit" class="btn btn-danger" value="Delete"/>
+        <a asp-action="Index">Back To List</a>
+    </form>
+</div>

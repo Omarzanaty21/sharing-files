@@ -1,0 +1,63 @@
+@model IEnumerable<FileSharing.Models.UploadViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    var contentTypeArray = new[] {"image/jpeg", "image/png"};
+}
+
+<h1>My Uploads</h1>
+<p style="text-align:right">
+    <a asp-Controller="Upload" asp-action="Create" class="btn btn-primary">Upload Now</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Preview</th>
+            <th>File Name</th>
+            <th>Size</th>
+            <th>Content Type</th>
+            <th>Upload Date</th>
+            <th>Download Count</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach(var item in Model)
+{
+    <tr>
+        <td>
+            @if(contentTypeArray.Contains(item.ContentType))
+            {
+                <img src="/Uploads/@item.FileName" width="70" height="70" class="img-thumbnail" alt="@item.OriginalFileName"/>
+            }
+        </td>
+        <td>
+            @item.OriginalFileName
+        </td>
+        <td>
+            @{
+                var size = item.Size / 1024;
+                if(size < 1024)
+                {
+                    <span>@Math.Floor(size) kb</span>
+                }
+                else
+                {
+                    <span>@(Math.Floor(size)/1024) Mb</span>
+                }
+            }
+        </td>
+        <td>
+            @item.ContentType
+        </td>
+        <td>
+            @item.UploadDate
+        </td>
+        <td>@item.DownloadCount</td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+        </td>
+    </tr>
+}
+    </tbody>
+</table>
