@@ -20,10 +20,10 @@ namespace FileSharing.Controllers
             this.signInManager = signInManager;
             this.userManager = userManager;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+        // public IActionResult Index()
+        // {
+        //     return View();
+        // }
     
         [HttpGet]
         public IActionResult Login()

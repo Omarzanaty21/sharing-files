@@ -74,7 +74,7 @@ namespace FileSharing.Controllers
 
                 helper.SendMail(new InputEmailMessage{
                     Subject = "You have unread messages",
-                    Email = "info@siet.com",
+                    Email = model.Email,
                     Body = sp.ToString()
                 });
                 return RedirectToAction("Contact");

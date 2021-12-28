@@ -58,7 +58,7 @@
 			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto mu-navbar-nav" style="float:left">
                         <li class="nav-item @(Context.Request.Path.Value.ToLower() == "/home/index"|| Context.Request.Path.Value.ToLower() == "/" ? "active":"")">
-                            <a  asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Home"]</a>
+                            <a  asp-area="" asp-controller="Home" asp-action="Index">@Localizer["home"]</a>
                         </li>
                         <li class="nav-item @(Context.Request.Path.Value.ToLower() == "/home/privacy"? "active" : "")">
                             <a  asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

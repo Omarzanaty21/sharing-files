@@ -43,21 +43,23 @@ namespace File_Sharing
                 options.AccessDeniedPath = "/Login";
             });
             services.AddTransient<IMailHelper, MailHelper>();
-            services.AddMvc()
-                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
-            services.AddLocalization(opt => { opt.ResourcesPath = "Resources";  });
 
-            services.Configure<RequestLocalizationOptions>(options => {
+            services.AddControllersWithViews();  
+            services.AddLocalization(opt => { opt.ResourcesPath = "Resources";  });
+            services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
                 List<CultureInfo> supportedCultures = new List<CultureInfo>
                 {
                     new CultureInfo("ar"),
                     new CultureInfo("en")
                 };
-
+                
                 options.DefaultRequestCulture = new RequestCulture("ar");
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,9 +83,8 @@ namespace File_Sharing
             app.UseAuthentication();
             app.UseAuthorization();
 
-            // app.UseRequestLocalization();
             var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
-    app.UseRequestLocalization(options.Value);
+            app.UseRequestLocalization(options.Value);
 
             app.UseEndpoints(endpoints =>
             {
