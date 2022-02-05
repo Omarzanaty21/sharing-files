@@ -28,7 +28,7 @@
         <td>
             @if(contentTypeArray.Contains(item.ContentType))
             {
-                <img src="/Uploads/@item.FileName" width="70" height="70" class="img-thumbnail" alt="@item.OriginalFileName"/>
+                <img data-src="/Uploads/@item.FileName" width="70" height="70" class="img-thumbnail lazyload" alt="@item.OriginalFileName"/>
             }
         </td>
         <td>
@@ -51,7 +51,7 @@
             @item.ContentType
         </td>
         <td>
-            @item.UploadDate
+            @item.UploadTime
         </td>
         <td>@item.DownloadCount</td>
         <td>

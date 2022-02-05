@@ -19,7 +19,7 @@ namespace FileSharing.Data
         public string ContentType {get; set;}
         public decimal Size {get; set;}
         public string UserId {get; set;}
-        public IdentityUser User {get; set;}
+        public ApplicationUser User {get; set;}
         public DateTime UploadTime {get; set;}
         public long DownloadCount { get; set; }
     }

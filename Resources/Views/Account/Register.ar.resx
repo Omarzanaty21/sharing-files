@@ -117,40 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Home" xml:space="preserve">
-    <value>الرئيسية</value>
-    <comment/>
-  </data>
-  <data name="Privacy" xml:space="preserve">
-    <value>الخصوصية</value>
-    <comment/>
-  </data>
-  <data name="Uploads" xml:space="preserve">
-    <value>الملفات المرفوعة</value>
-    <comment/>
-  </data>
-  <data name="Contact" xml:space="preserve">
-    <value>تواصل معنا</value>
-    <comment/>
-  </data>
-  <data name="About" xml:space="preserve">
-    <value>عن الموقع</value>
-    <comment/>
-  </data>
-  <data name="Browse" xml:space="preserve">
-    <value>تصفح</value>
-    <comment/>
-  </data>
-  <data name="Login" xml:space="preserve">
-    <value>تسجيل الدخول</value>
-    <comment/>
-  </data>
-  <data name="Logout" xml:space="preserve">
-    <value>تسجيل الخروج</value>
-    <comment/>
-  </data>
   <data name="Register" xml:space="preserve">
-    <value>تسجيل</value>
+    <value>تسجيل حساب</value>
+    <comment/>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ادخل بريدك الالكتروني</value>
+    <comment/>
+  </data>
+  <data name="Enter.Password" xml:space="preserve">
+    <value>ادخل كلمة المرور</value>
+    <comment/>
+  </data>
+  <data name="Enter.ConfirmPassword" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+    <comment/>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>الاسم الأول</value>
+    <comment/>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>الاسم الأخير</value>
     <comment/>
   </data>
 </root>

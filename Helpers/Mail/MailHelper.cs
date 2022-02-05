@@ -21,7 +21,7 @@ namespace FileSharing.Helpers.Mail{
                 msg.Body = model.Body;
                 msg.IsBodyHtml = true;
                 
-                msg.From = new MailAddress(config["Mail:From"], config["Mail:Sender"], System.Text.Encoding.UTF8);
+                msg.From = new MailAddress(config.GetValue<string>("Mail:From"), config.GetValue<string>("Mail:Sender"), System.Text.Encoding.UTF8);
                 client.UseDefaultCredentials = false;
                 client.EnableSsl = true;
                 client.Credentials = new System.Net.NetworkCredential(config["Mail:From"], config["Mail:PWD"]);

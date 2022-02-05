@@ -118,39 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Home" xml:space="preserve">
-    <value>الرئيسية</value>
+    <value>Home</value>
     <comment/>
   </data>
   <data name="Privacy" xml:space="preserve">
-    <value>الخصوصية</value>
+    <value>Privacy</value>
     <comment/>
   </data>
   <data name="Uploads" xml:space="preserve">
-    <value>الملفات المرفوعة</value>
+    <value>Uploads</value>
     <comment/>
   </data>
   <data name="Contact" xml:space="preserve">
-    <value>تواصل معنا</value>
+    <value>Contact</value>
     <comment/>
   </data>
   <data name="About" xml:space="preserve">
-    <value>عن الموقع</value>
+    <value>About</value>
     <comment/>
   </data>
   <data name="Browse" xml:space="preserve">
-    <value>تصفح</value>
-    <comment/>
-  </data>
-  <data name="Login" xml:space="preserve">
-    <value>تسجيل الدخول</value>
+    <value>Browse</value>
     <comment/>
   </data>
   <data name="Logout" xml:space="preserve">
-    <value>تسجيل الخروج</value>
+    <value>Logout</value>
     <comment/>
   </data>
   <data name="Register" xml:space="preserve">
-    <value>تسجيل</value>
+    <value>Register</value>
+    <comment/>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
     <comment/>
   </data>
 </root>

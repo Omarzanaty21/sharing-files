@@ -1,9 +1,9 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace FileSharing.Models
-{   
-        public class LoginViewModel 
+{
+    public class LoginViewModel 
         {
             [EmailAddress]
             [Required]
@@ -20,5 +20,8 @@ namespace FileSharing.Models
             public string Password {get; set;}
             [Compare("Password")]
             public string ConfirmPassword {get; set;}
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+
         }
 }

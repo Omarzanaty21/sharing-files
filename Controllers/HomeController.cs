@@ -37,12 +37,7 @@ namespace FileSharing.Controllers
             this.helper = helper;
             _localizer = localizer;
         }
-        [HttpGet("/test")]
-        public IActionResult Info()
-        {
-            return Ok(_localizer["test"]);
-            // return View();
-        }
+       
         [HttpGet]
         public IActionResult Contact()
         {
@@ -97,7 +92,7 @@ namespace FileSharing.Controllers
                 FileName = u.FileName,
                 ContentType = u.ContentType,
                 Size = u.Size,
-                UploadDate = u.UploadTime,
+                UploadTime = u.UploadTime,
                 DownloadCount = u.DownloadCount
             })
             .Take(3);
@@ -116,17 +111,20 @@ namespace FileSharing.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         [HttpGet]
-        public IActionResult SetCulture(string lang)
+        public IActionResult SetCulture(string lang, string ReturnUrl = null)
         {
             if(!string.IsNullOrEmpty(lang))
             {
                 // Response.Cookies.Append("culture", lang);
-                
                 Response.Cookies.Append(
                     CookieRequestCultureProvider.DefaultCookieName,
                     CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(lang)),
-                    new CookieOptions{Expires = DateTimeOffset.UtcNow.AddYears(1)}  
+                    new CookieOptions{Expires = DateTimeOffset.UtcNow.AddYears(1)}
                 );
+            }
+            if(!string.IsNullOrEmpty(ReturnUrl))
+            {
+                return LocalRedirect(ReturnUrl);
             }
             return RedirectToAction("Index");
         }

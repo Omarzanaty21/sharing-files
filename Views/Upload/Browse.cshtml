@@ -13,7 +13,7 @@
                 <div class="col-md-4">
                     @if(item.ContentType.ToLower().StartsWith("image"))
                     {
-                    <img height="50%" width="50%" src="/Uploads/@item.FileName" class="img-fluid rounded-start" alt="...">
+                    <img height="50%" width="50%" data-src="/Uploads/@item.FileName" class="img-fluid rounded-start lazyload" alt="...">
                     }
                 </div>
                 <div class="col-md-8">
@@ -21,7 +21,7 @@
                             <h5 class="card-title">@item.OriginalFileName</h5>
                             @*<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>*@
                             <p class="card-text">
-                                <small class="text-muted">@item.UploadDate</small>
+                                <small class="text-muted">@item.UploadTime</small>
                                 <br />
                                 @{
                                     var size = item.Size / 1024;
@@ -43,5 +43,17 @@
             </div>
         </div>
         }
+        <div class="col-md-12 text-center">
+            <div>  
+                @if(ViewBag.currentPage - 1 > 0)
+                {
+                     <a href="/Upload/Browse/?requiredPage=@(ViewBag.currentPage - 1)" class="btn btn-outline-primary btn-lg align-left">Previous</a>
+                }  
+                @if(ViewBag.currentPage + 1 <= ViewBag.pageCount)
+                {
+                    <a href="/Upload/Browse/?requiredPage=@(ViewBag.currentPage + 1)" class="btn btn-outline-primary btn-lg align-right">Next</a>  
+                }
+            </div>
+        </div>
     </div>
 </div>

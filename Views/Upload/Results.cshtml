@@ -22,7 +22,7 @@
                             @*<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>*@
                             <div style="text-align:right">Downloads : @item.DownloadCount</div>
                             <p class="card-text" style="text-align:right">
-                                <small class="text-muted">@item.UploadDate</small><br />
+                                <small class="text-muted">@item.UploadTime</small><br />
                                  @{
                                     var size = item.Size / 1024;
                                     if(size < 1024)
@@ -41,5 +41,17 @@
             </div>
         </div>
         }
+         <div class="col-md-12 text-center">
+            <div>  
+                @if(ViewBag.currentPage - 1 > 0)
+                {
+                     <a href="/Upload/Results/?requiredPage=@(ViewBag.currentPage - 1)" class="btn btn-outline-primary btn-lg align-left">Previous</a>
+                }  
+                @if(ViewBag.currentPage + 1 <= ViewBag.pageCount)
+                {
+                    <a href="/Upload/Results/?requiredPage=@(ViewBag.currentPage + 1)" class="btn btn-outline-primary btn-lg align-right">Next</a>  
+                }
+            </div>
     </div>
 </div>
+   

@@ -5,7 +5,7 @@
 
 <div class="text-center">
 
-    <h1>Search Files</h1> 
+    <h1>@Localizer["Search.Files"]</h1> 
     <div class= "container">
         <div class="row justify-content-md-center">
             <div class="col-md-8">
@@ -13,7 +13,7 @@
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="term" placeholder="File Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <input class="btn btn-outline-primary" type="submit" value="Search"></input>
+                            <input class="btn btn-outline-primary" type="submit" value="@Localizer["Search"]"></input>
                         </div>
                     </div>
                 </form>
@@ -22,7 +22,7 @@
     </div>
 </div>
 <div class="col-md-12 text-center" style="margin-top:40px">
-    <h2>Popular Downloads</h2>
+    <h2>@Localizer["Popular"]</h2>
     <hr />
     <table class="table">
         <tbody>
@@ -33,11 +33,11 @@
                     <td>
                         @if (contentTypeArray.Contains(item.ContentType))
                         {
-                            <img src="/Uploads/@item.FileName" width="70" height="70" class="img-thumbnail" alt="@item.OriginalFileName"/>
+                            <img data-src="/Uploads/@item.FileName" width="70" height="70" class="img-thumbnail lazyload" alt="@item.OriginalFileName"/>
                         }
                     </td>
                     <td>@item.OriginalFileName</td>
-                    <td>Downloads : @item.DownloadCount</td>
+                    <td>@Localizer["Downloads"] : @item.DownloadCount</td>
                 </tr>
             }
         </tbody>
