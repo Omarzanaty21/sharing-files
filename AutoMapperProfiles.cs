@@ -20,7 +20,8 @@ namespace FileSharing
     {
         public UserProfile()
         {
-            CreateMap<Data.ApplicationUser, UserViewModel>();
+            CreateMap<Data.ApplicationUser, UserViewModel>()
+            .ForMember(u => u.HasPassword, opt => opt.MapFrom(u => u.PasswordHash != null));
         }
     }
 }

@@ -142,7 +142,19 @@
         <main>
             <div class="container">
                 <div class="main-content">
-                    @RenderBody()
+					@if(TempData["Success"] != null)
+					{
+						<div class="alert alert-success text-center">
+							<strong>@TempData["Success"]</strong>
+						</div>
+					}
+					@if(TempData["Error"] != null)
+					{
+						<div class="alert alert-danger text-center">
+							<strong>@TempData["Error"]</strong>
+						</div>
+					}
+				@RenderBody()
                 </div>
             </div>
         </main>

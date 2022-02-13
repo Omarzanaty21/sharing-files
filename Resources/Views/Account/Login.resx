@@ -129,4 +129,8 @@
     <value>Enter your Password</value>
     <comment/>
   </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Did you forget your password?</value>
+    <comment/>
+  </data>
 </root>
